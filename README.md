@@ -1,8 +1,8 @@
-# Multi-modal Graph Invariant Learning for Drug-Drug Interaction Prediction
+# Multi-view Graph Invariant Learning for Drug-Drug Interaction Prediction
 
 ## Introduction
 
-This project focuses on the prediction of Drug-Drug Interactions (DDI) using a novel model called MGIL-DDI (Multi-modal Graph Invariant Learning for Drug-Drug Interaction Prediction). The model integrates invariant and variant features of drugs to predict DDIs more accurately, addressing the domain-shift problem encountered with new drugs. The approach uses Graph Neural Networks (GNNs) and a self-attention mechanism to embed multi-modal knowledge graphs into comprehensive drug features.
+Drug-Drug Interaction(DDI) prediction is essential for evaluating a new drug's side effects and adverse interactions before the clinical application. The latest research applies multiview knowledge to enhance the model's generalization ability to predict new drug interactions, i.e., unknown Drug-Drug Interaction (uDDI). However, a new drug's feature inevitably encounters the feature-shift problem because the trained models have not previously learned knowledge of the new drug. This significantly decreases the accuracy of the uDDI prediction. To this end, this work tries to extract the invariant features of known drugs to alleviate the impact of the feature-shift problem on the prediction of uDDI.In detail, first, the GNN models embed multiview knowledge graphs, including drug-chemical entities,drug-substructures, drug-drug interactions, and molecular structures, into drug features. Then, an invariant feature corresponding to the new drug is learned from the knowledge graph of the previous drugs. After that, according to its knowledge, a variant feature corresponding to the new drug is embedded through the GNN models. Finally, the variant and invariant drug features are fused to predict the DDI. Extensive experiments on real-world drug datasets show that the proposed method achieves new state-of-the-art records on new drug DDI prediction tasks. 
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 ## Dataset
 
-Please see dataset.
+Please see the dataset.
 
 ## Usage
 
@@ -67,7 +67,7 @@ The MGIL-DDI model consistently outperforms existing approaches in various metri
 
 1. **Addressing the Domain-Shift Problem**: Fusing invariant features of known drugs with new drug features.
 2. **Fusion of Invariant and Variant Features**: Combining invariant features learned from existing drug knowledge with variant features specific to new drugs.
-3. **Proposes a Model with Strong Generalization**: The MGIL-DDI model shows superior performance in predicting DDI events.
+3. **Proposes a Model with Strong Generalization**: The MGIL-DDI model performs superiorly in predicting DDI events.
 
 ## Contact
 
