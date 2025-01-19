@@ -61,13 +61,13 @@ The model has been evaluated on three tasks:
 2. **Task 2**: Prediction of interaction events between known drugs and new drugs.
 3. **Task 3**: Prediction of interaction events between new drugs.
 
-The MGIL-DDI model consistently outperforms existing approaches in various metrics, including accuracy, AUPR, AUC, F1 score, precision, and recall.
+The GIL-DDI model consistently outperforms existing approaches in various metrics, including accuracy, AUPR, AUC, F1 score, precision, and recall.
 
 ## Contributions
 
 1. **Addressing the feature Shift Problem**: Fusing invariant features of known drugs with new drug features.
 2. **Fusion of Invariant and Variant Features**: Combining invariant features learned from existing drug knowledge with variant features specific to new drugs.
-3. **Proposes a Model with Strong Generalization**: The MGIL-DDI model performs superiorly in predicting DDI events.
+3. **Proposes a Model with Strong Generalization**: The GIL-DDI model performs superiorly in predicting DDI events.
 
 ## Contact
 
