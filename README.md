@@ -65,7 +65,7 @@ The MGIL-DDI model consistently outperforms existing approaches in various metri
 
 ## Contributions
 
-1. **Addressing the Domain-Shift Problem**: Fusing invariant features of known drugs with new drug features.
+1. **Addressing the feature Shift Problem**: Fusing invariant features of known drugs with new drug features.
 2. **Fusion of Invariant and Variant Features**: Combining invariant features learned from existing drug knowledge with variant features specific to new drugs.
 3. **Proposes a Model with Strong Generalization**: The MGIL-DDI model performs superiorly in predicting DDI events.
 
