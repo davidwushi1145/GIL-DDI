@@ -12,8 +12,8 @@
 
 Please use the following citation for the version of DrugBank data you are using. The most current citation is:
 
-Knox C, Wilson M, Klinger CM, et al. DrugBank 6.0: the DrugBank Knowledgebase for 2024. Nucleic Acids Res. 2024 Jan 5;52(D1):D1265-D1275. doi: 10.1093/nar/gkad976.
+Knox C, Wilson M, Klinger CM, et al. DrugBank 6.0: the DrugBank Knowledgebase for 2024. Nucleic Acids Res. 2024 Jan 5;52(D1): D1265-D1275. doi: 10.1093/nar/gkad976.
 
 ## Support
 
-If you encounter any issues or have any concerns, please contact the DrugBank support team at support@drugbank.com.
+If you encounter any issues or have any concerns, please contact the DrugBank support team.
