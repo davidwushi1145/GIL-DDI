@@ -1,3 +1,9 @@
+"""
+GIL-DDI Task 1: Prediction of unobserved interaction events between known drugs
+
+This script trains and evaluates the GNN model for predicting drug-drug interactions
+between drugs that were seen during training.
+"""
 import argparse
 import os
 import random
@@ -23,24 +29,33 @@ from model.task1.gnn_model import GNN1, GNN2, GNN3, GNN4
 from model.task1.layers import FusionLayer
 from util.utils import *
 
+warnings.filterwarnings("ignore")
 os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':4096:8'
 
-warnings.filterwarnings("ignore")
-device = torch.device("cuda:3" if torch.cuda.is_available() else "cpu")
+# Auto-detect device instead of hardcoding
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 parser = argparse.ArgumentParser(description='GNN based on task1')
-parser.add_argument("--epoches", type=int, choices=[100, 500, 1000, 2000], default=120)
-parser.add_argument("--batch_size", type=int, choices=[2048, 1024, 512, 256, 128], default=1024)
-parser.add_argument("--weigh_decay", type=float, choices=[1e-1, 1e-2, 1e-3, 1e-4, 1e-8], default=1e-8)
-parser.add_argument("--lr", type=float, choices=[1e-3, 1e-4, 1e-5, 4 * 1e-3], default=1 * 1e-2)  # 4*1e-3
-
-parser.add_argument("--neighbor_sample_size", choices=[4, 6, 10, 16], type=int, default=6)
-parser.add_argument("--event_num", type=int, default=65)
-
-parser.add_argument("--n_drug", type=int, default=572)
-parser.add_argument("--seed", type=int, default=0)
-parser.add_argument("--dropout", type=float, default=0.3)
-parser.add_argument("--embedding_num", type=int, choices=[128, 64, 256, 32], default=128)
+parser.add_argument("--epoches", type=int, choices=[100, 500, 1000, 2000], default=120,
+                    help="Number of training epochs")
+parser.add_argument("--batch_size", type=int, choices=[2048, 1024, 512, 256, 128], default=1024,
+                    help="Batch size for training")
+parser.add_argument("--weigh_decay", type=float, choices=[1e-1, 1e-2, 1e-3, 1e-4, 1e-8], default=1e-8,
+                    help="Weight decay (L2 regularization)")
+parser.add_argument("--lr", type=float, choices=[1e-3, 1e-4, 1e-5, 4 * 1e-3], default=1 * 1e-2,
+                    help="Learning rate")
+parser.add_argument("--neighbor_sample_size", choices=[4, 6, 10, 16], type=int, default=6,
+                    help="Size of neighborhood sampling")
+parser.add_argument("--event_num", type=int, default=65,
+                    help="Number of DDI event types")
+parser.add_argument("--n_drug", type=int, default=572,
+                    help="Total number of drugs")
+parser.add_argument("--seed", type=int, default=0,
+                    help="Random seed for reproducibility")
+parser.add_argument("--dropout", type=float, default=0.3,
+                    help="Dropout rate")
+parser.add_argument("--embedding_num", type=int, choices=[128, 64, 256, 32], default=128,
+                    help="Embedding dimension")
 args = parser.parse_args()
 
 random.seed(args.seed)
