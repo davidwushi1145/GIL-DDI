@@ -265,7 +265,7 @@ For any queries or issues, please open an issue in this repository.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+The code is distributed under the CC BY-NC-SA 4.0 License. See [LICENSE](LICENSE) for more information.
 
 ## Citation
 
