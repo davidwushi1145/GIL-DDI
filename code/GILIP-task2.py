@@ -330,7 +330,7 @@ def main():
         train_y = new_label[y_train]
         test_x = x_datasets[X_test]
         test_y = new_label[y_test]
-        # 初始化早停对象
+        # Initialize early termination objects
         early_stopping = EarlyStopping(patience=100, delta=0.001)
 
         test_loss, test_acc, train_loss, train_acc, test_list, test_output = train(train_x, train_y, test_x, test_y,
