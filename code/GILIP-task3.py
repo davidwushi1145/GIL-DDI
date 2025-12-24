@@ -189,14 +189,14 @@ def train(train_x, train_y, test_x, test_y, net, invariant_adj, early_stopping):
             if test_score == max(test_list):
                 max_test_output = test_output
             print("test_acc:", test_acc, "train_acc:", sum(train_a) / len(train_a), "test_score:", test_score)
-        # 检查早停条件
+        # Check early termination conditions
         early_stopping(test_score, net)
         if early_stopping.early_stop:
             print(f"Early stopping at epoch {epoch + 1}")
             break
         print('epoch [%d] train_loss: %.6f testing_loss: %.6f ' % (
             epoch + 1, train_l / len(train_y), test_loss / len(test_y)))
-    # 加载最佳模型
+    # Load the optimal model
     early_stopping.load_best_model(net)
     return test_loss / len(test_y), max(test_list), train_l / len(train_y), sum(train_a) / len(
         train_a), test_list, max_test_output
@@ -325,7 +325,7 @@ def main():
         train_y = new_label[y_train]
         test_x = x_datasets[X_test]
         test_y = new_label[y_test]
-        # 初始化早停对象
+        # Initialize early termination objects
         early_stopping = EarlyStopping(patience=100, delta=0.001)
 
         test_loss, test_acc, train_loss, train_acc, test_list, test_output = train(train_x, train_y, test_x, test_y,
