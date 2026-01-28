@@ -272,8 +272,15 @@ The code is distributed under the CC BY-NC-SA 4.0 License. See [LICENSE](LICENSE
 If you use this code or model in your research, please cite:
 
 ```bibtex
-@article{gil-ddi,
-  title={GIL-DDI: Multi-view Graph Invariant Learning for Drug-Drug Interaction Prediction},
+@article{li2026gil,
+  title={GIL-DDI: multi-view graph invariant learning for unknown drug--drug interaction prediction},
+  author={Li, Yuanxian and Du, Yuan and Peng, Hong and He, Zhenli and Jin, Xin and Xie, Cheng},
+  journal={Knowledge and Information Systems},
+  volume={68},
+  number={1},
+  pages={48},
+  year={2026},
+  publisher={Springer}
 }
 ```
 
